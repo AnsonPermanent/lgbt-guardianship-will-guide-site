@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>给LGBT群体的中国意定监护与遗嘱攻略：管事的和管钱的，两个都要办</title>
+  <meta name="description" content="把飞书文档转成适合 GitHub Pages 发布的静态长文页。">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: rgba(255, 255, 255, 0.9);
+      --text: #1f2329;
+      --muted: #5b6472;
+      --line: #d9dee8;
+      --accent: #2457f5;
+      --accent-soft: rgba(36, 87, 245, 0.08);
+      --shadow: 0 16px 40px rgba(31, 35, 41, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(36, 87, 245, 0.08), transparent 28%),
+        linear-gradient(180deg, #f8faff 0%, var(--bg) 100%);
+      line-height: 1.82;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .shell {
+      width: min(1160px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.88));
+      border: 1px solid rgba(217, 222, 232, 0.9);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 32px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 16px 0 12px;
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px;
+      background: var(--panel);
+      border: 1px solid rgba(217, 222, 232, 0.92);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 22px 20px;
+      backdrop-filter: blur(12px);
+    }
+
+    .toc h2 {
+      margin: 0 0 14px;
+      font-size: 16px;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .toc li { margin: 0; }
+    .toc .toc-level-2 { padding-left: 10px; }
+    .toc .toc-level-3 { padding-left: 20px; }
+    .toc a {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .article {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(217, 222, 232, 0.92);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+      backdrop-filter: blur(12px);
+    }
+
+    .article h2,
+    .article h3,
+    .article h4 {
+      margin: 2.2em 0 0.8em;
+      line-height: 1.35;
+    }
+
+    .article h2 { font-size: 28px; }
+    .article h3 { font-size: 22px; }
+    .article h4 { font-size: 18px; }
+    .article p { margin: 1em 0; font-size: 17px; }
+    .article strong { font-weight: 700; color: #0f1728; }
+
+    .article ul,
+    .article ol {
+      margin: 1em 0;
+      padding-left: 1.4em;
+      font-size: 17px;
+    }
+
+    .article li + li { margin-top: 0.45em; }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 22px 0;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      background: white;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 15px;
+    }
+
+    th {
+      background: #f7f9fc;
+      font-weight: 700;
+    }
+
+    .html5-card {
+      margin: 28px 0;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 12px 24px rgba(31, 35, 41, 0.06);
+    }
+
+    .html5-frame {
+      width: 100%;
+      min-height: 440px;
+      border: 0;
+      display: block;
+      background: white;
+    }
+
+    .footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 920px) {
+      .shell { width: min(100vw - 20px, 1000px); padding-top: 20px; }
+      .layout { grid-template-columns: 1fr; }
+      .toc { position: static; order: -1; }
+      .hero, .article { padding: 24px; border-radius: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="eyebrow">Feishu Doc to HTML</div>
+      <h1>给LGBT群体的中国意定监护与遗嘱攻略：管事的和管钱的，两个都要办</h1>
+      <div class="meta">来源文档：<a href="https://feishu.doubao.com/docx/UdvNdV81to01v9x5kJpcWszhned" target="_blank" rel="noreferrer">飞书原文</a> · Revision 5</div>
+    </section>
+
+    <div class="layout">
+      <aside class="toc">
+        <h2>目录</h2>
+        <ul><li class="toc-level-1"><a href="#一-先搞懂-两个工具各管哪一段">一、先搞懂：两个工具各管哪一段</a></li><li class="toc-level-1"><a href="#二-意定监护-管-活着的事">二、意定监护：管&quot;活着的事&quot;</a></li><li class="toc-level-2"><a href="#一-什么时候生效-能做什么">（一）什么时候生效、能做什么</a></li><li class="toc-level-2"><a href="#二-不能做什么">（二）不能做什么</a></li><li class="toc-level-2"><a href="#三-人死即消">（三）人死即消</a></li><li class="toc-level-2"><a href="#四-胜在灵活">（四）胜在灵活</a></li><li class="toc-level-1"><a href="#三-遗嘱-遗赠-管-身后的事">三、遗嘱（遗赠）：管&quot;身后的事&quot;</a></li><li class="toc-level-2"><a href="#一-为什么必须有遗嘱">（一）为什么必须有遗嘱</a></li><li class="toc-level-2"><a href="#二-不立遗嘱的后果">（二）不立遗嘱的后果</a></li><li class="toc-level-2"><a href="#三-遗赠给伴侣-完全合法">（三）遗赠给伴侣，完全合法</a></li><li class="toc-level-2"><a href="#四-遗产管理人-一个人担两个角色">（四）遗产管理人：一个人担两个角色</a></li><li class="toc-level-2"><a href="#五-两个实操提醒">（五）两个实操提醒</a></li><li class="toc-level-1"><a href="#四-最终策略-照着办就行">四、最终策略：照着办就行</a></li><li class="toc-level-1"><a href="#五-北京办理攻略">五、北京办理攻略</a></li><li class="toc-level-2"><a href="#一-第一步永远是打电话咨询">（一）第一步永远是打电话咨询</a></li><li class="toc-level-2"><a href="#二-推荐去处">（二）推荐去处</a></li><li class="toc-level-2"><a href="#三-便民信息与费用参考">（三）便民信息与费用参考</a></li><li class="toc-level-2"><a href="#四-办理流程">（四）办理流程</a></li><li class="toc-level-1"><a href="#六-提前准备这些材料">六、提前准备这些材料</a></li><li class="toc-level-2"><a href="#一-意定监护公证">（一）意定监护公证</a></li><li class="toc-level-2"><a href="#二-遗嘱公证">（二）遗嘱公证</a></li><li class="toc-level-1"><a href="#七-q-a-特殊情况快问快答">七、Q&amp;A：特殊情况快问快答</a></li><li class="toc-level-1"><a href="#附-参考来源">附：参考来源</a></li></ul>
+      </aside>
+
+      <article class="article">
+        <p>特别for京城小四口</p>
+<p>在法律上，伴侣不是你的&quot;亲属&quot;。这带来两个很现实的后果：哪天你躺在ICU里，法律默认能替你签字的人里面，没有TA；哪天你不在了，你的存款和房子，可能会流向你并不熟悉的亲戚。</p>
+<p>这不是贩卖焦虑，这两件事都可以由我们自己提前安排——靠两个法律工具：<strong>意定监护</strong>和<strong>遗嘱（遗赠）</strong>。意定监护管&quot;活着的事&quot;，遗嘱管&quot;身后的事&quot;，<strong>两个都要办</strong>。下面把分工、策略、北京办理地点、材料和常见问题一次讲清楚。</p>
+<h1 id="一-先搞懂-两个工具各管哪一段">一、先搞懂：两个工具各管哪一段</h1>
+<p>一句话概括：<strong>意定监护＝你活着但失能时，有人替你签字做主；遗嘱＝你去世后，钱按你的意愿分配。</strong>两者覆盖的时间段不同、功能不同，谁也不能替代谁。</p>
+<div class="html5-card"><iframe class="html5-frame" loading="lazy" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;use-iframe&quot; content=&quot;true&quot;&gt;
+&lt;meta name=&quot;html-box-height-mode&quot; content=&quot;auto&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;意定监护与遗嘱遗赠的双轨分工图解与最终办理策略&quot;&gt;
+&lt;title&gt;意定监护与遗嘱双轨图解&lt;/title&gt;
+&lt;style&gt;
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, sans-serif; background: #FFFFFF; color: #1F2329; line-height: 1.6; }
+  .wrap { width: 100%; max-width: 100%; padding: 4px 2px; }
+  .title { font-size: 18px; font-weight: 700; color: #1F2329; margin: 6px 0 14px; }
+  .timeline { display: flex; align-items: stretch; margin: 0 0 18px; }
+  .tl-step { flex: 1; text-align: center; position: relative; }
+  .tl-node { display: inline-block; background: #EFF5FA; border: 1px solid #C9DDEB; color: #1F2329; border-radius: 20px; padding: 6px 12px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .tl-node.now { background: #FFFFFF; border: 1px solid #DEE3E8; color: #646A73; font-weight: 400; }
+  .tl-node.live { background: #3D7EAA; border-color: #3D7EAA; color: #FFFFFF; }
+  .tl-node.after { background: #FFFFFF; border: 1px solid #DEE3E8; color: #646A73; font-weight: 400; }
+  .tl-arrow { position: absolute; top: 50%; right: -8px; transform: translateY(-50%); color: #C0CCD6; font-size: 14px; }
+  .tl-step:last-child .tl-arrow { display: none; }
+  .cols { display: flex; gap: 12px; align-items: stretch; }
+  .card { flex: 1; border: 1px solid #DEE3E8; border-radius: 10px; padding: 14px 14px 12px; background: #FFFFFF; }
+  .card-live { border-top: 3px solid #3D7EAA; }
+  .card-after { border-top: 3px solid #8FA8BC; }
+  .card-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+  .card-name { font-size: 16px; font-weight: 700; color: #1F2329; }
+  .card-tag { font-size: 12px; color: #646A73; background: #F2F3F5; border-radius: 10px; padding: 2px 8px; white-space: nowrap; }
+  .rows { display: table; width: 100%; border-collapse: collapse; }
+  .row { display: table-row; }
+  .row-label { display: table-cell; width: 88px; font-size: 12px; color: #646A73; padding: 5px 8px 5px 0; vertical-align: top; }
+  .row-val { display: table-cell; font-size: 13px; color: #1F2329; padding: 5px 0; vertical-align: top; }
+  .row-val b { font-weight: 600; }
+  .warn { display: table-cell; font-size: 12px; color: #B4542A; padding: 5px 0; }
+  .strategy { margin-top: 16px; border: 1px solid #EAD9A8; background: #FBF6E9; border-radius: 10px; padding: 12px 14px; }
+  .strategy-title { font-size: 14px; font-weight: 700; color: #8A6116; margin-bottom: 6px; }
+  .strategy ol { margin: 0; padding-left: 20px; }
+  .strategy li { font-size: 13px; color: #1F2329; margin: 4px 0; }
+  @media (max-width: 600px) {
+    .cols { flex-direction: column; }
+    .tl-node { font-size: 12px; padding: 5px 8px; }
+    .card-name { font-size: 15px; }
+  }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;wrap&quot;&gt;
+  &lt;div class=&quot;title&quot;&gt;两份法律文件，各管一段人生：意定监护管生前，遗嘱（遗赠）管身后&lt;/div&gt;
+  &lt;div class=&quot;timeline&quot;&gt;
+    &lt;div class=&quot;tl-step&quot;&gt;&lt;span class=&quot;tl-node now&quot;&gt;现在：趁头脑清楚时办理&lt;/span&gt;&lt;span class=&quot;tl-arrow&quot;&gt;→&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tl-step&quot;&gt;&lt;span class=&quot;tl-node live&quot;&gt;失能时：意定监护生效&lt;/span&gt;&lt;span class=&quot;tl-arrow&quot;&gt;→&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tl-step&quot;&gt;&lt;span class=&quot;tl-node after&quot;&gt;去世后：遗嘱（遗赠）生效&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;cols&quot;&gt;
+    &lt;div class=&quot;card card-live&quot;&gt;
+      &lt;div class=&quot;card-head&quot;&gt;&lt;span class=&quot;card-name&quot;&gt;意定监护&lt;/span&gt;&lt;span class=&quot;card-tag&quot;&gt;管活着的事&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;rows&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;生效时点&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;&lt;b&gt;丧失或部分丧失民事行为能力时&lt;/b&gt;，如昏迷、失智、无法签字&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;能做什么&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;医疗决定与手术签字；生活照护安排；代为处理日常事务&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;重要边界&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;&lt;b&gt;只能为本人利益行事&lt;/b&gt;，不得把本人财产转给自己（民法典第35条）&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;何时终止&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;本人去世即自动失效，&lt;b&gt;不能当遗嘱用&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;最大优势&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;可设多人、按顺序生效；同一时间仅一人履职，去世自动顺延下一位&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card card-after&quot;&gt;
+      &lt;div class=&quot;card-head&quot;&gt;&lt;span class=&quot;card-name&quot;&gt;遗嘱（遗赠）&lt;/span&gt;&lt;span class=&quot;card-tag&quot;&gt;管身后的事&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;rows&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;生效时点&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;&lt;b&gt;去世后&lt;/b&gt;，从遗产分配开始&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;能做什么&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;决定财产归谁；指定遗产管理人；可遗赠给法定继承人以外的任何人，包括伴侣&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;关键动作&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;&lt;b&gt;受遗赠人知道后60日内表态接受&lt;/b&gt;，逾期视为放弃（民法典第1124条）&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;何时终止&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;遗产分割处理完毕&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;最大优势&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;公证后法律效力极强；生前可随时撤回、变更，以最后一份为准&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;strategy&quot;&gt;
+    &lt;div class=&quot;strategy-title&quot;&gt;最终策略：三句话照做&lt;/div&gt;
+    &lt;ol&gt;
+      &lt;li&gt;办理意定监护：第一顺位写你的伴侣，后面依次排上你信赖的好朋友。&lt;/li&gt;
+      &lt;li&gt;办理遗嘱（遗赠）：受遗赠人和遗产管理人都写你的伴侣。&lt;/li&gt;
+      &lt;li&gt;双方互为对方办理，两份安排都做公证，效果才完整。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+" title="文档内嵌图解"></iframe></div>
+<p>再把关键差异放进一张表里对照着看[1][3][4][5][6]：</p>
+<div class="table-wrap"><table><thead><tr><th>维度</th><th>意定监护</th><th>遗嘱（遗赠）</th></tr></thead><tbody><tr><td>-</td><td>-</td><td>-</td></tr><tr><td><strong>管什么</strong></td><td>你活着但失能时的照护与决策</td><td>你去世后的财产归属</td></tr><tr><td><strong>何时生效</strong></td><td>丧失或部分丧失民事行为能力时</td><td>去世后</td></tr><tr><td><strong>能选谁</strong></td><td>近亲属或任何愿意担任的个人、组织</td><td>法定继承人，或法定继承人以外的任何人</td></tr><tr><td><strong>受益者</strong></td><td>你自己（监护人替你作主）</td><td>你指定的人，例如伴侣</td></tr><tr><td><strong>何时终止</strong></td><td>本人去世即失效</td><td>遗产分割处理完毕</td></tr><tr><td><strong>核心风险</strong></td><td>监护人滥用职权，需要监督人制衡</td><td>亲属争议；受遗赠人错过60日表态期</td></tr></tbody></table></div>
+<h1 id="二-意定监护-管-活着的事">二、意定监护：管&quot;活着的事&quot;</h1>
+<h2 id="一-什么时候生效-能做什么">（一）什么时候生效、能做什么</h2>
+<p>意定监护的作用，是在<strong>本人活着但失能</strong>的时候生效，最典型的就是各种手术签字、医疗决定，也包括日常生活照护的安排。理论上，它也能替代本人作出其他决策（包括财产），但有严格限制[1]。</p>
+<h2 id="二-不能做什么">（二）不能做什么</h2>
+<p>监护职责有明确的边界：<strong>监护人只能以&quot;被监护人的利益&quot;行事，除为维护本人利益外，不得处分本人的财产</strong>。也就是说，一个人拿到了你的意定监护身份，并不能把你的钱直接拿给自己花；想借着监护身份&quot;洗钱&quot;，有极大的法律风险[8]。</p>
+<h2 id="三-人死即消">（三）人死即消</h2>
+<p><strong>意定监护在人去世时自动取消，不能当遗嘱用。</strong>它只管你活着的时候，身后的事要另外安排。</p>
+<h2 id="四-胜在灵活">（四）胜在灵活</h2>
+<p>意定监护非常灵活：<strong>可以设置多个人，并按顺序生效；同一时间只生效一人，生效的那位去世了，自动顺延到下一位</strong>。所以最稳妥的排法是：第一顺位写你的伴侣，后面依次排上你信得过的好朋友——万一伴侣先走，还有朋友顶上。</p>
+<h1 id="三-遗嘱-遗赠-管-身后的事">三、遗嘱（遗赠）：管&quot;身后的事&quot;</h1>
+<h2 id="一-为什么必须有遗嘱">（一）为什么必须有遗嘱</h2>
+<p>遗嘱是最正规有效的遗产处理办法，<strong>尤其做过公证的遗嘱，法律效力极高</strong>。它有必要单独做，核心目的就是避免你去世后亲戚来分钱。</p>
+<h2 id="二-不立遗嘱的后果">（二）不立遗嘱的后果</h2>
+<p>没有遗嘱的情况下，遗产按法定继承处理：第一顺序是<strong>配偶、子女、父母</strong>，第二顺序是<strong>兄弟姐妹、祖父母、外祖父母</strong>[3]。伴侣不在任何一顺位里。</p>
+<p>极端情况下会出现完全不可控的走向：比如你走了，遗产给了你父亲；你父亲去世后，给了他的兄弟；再往后，可能落到你堂哥手里。你辛苦攒下的东西，就这样与你最想给的人无关。</p>
+<h2 id="三-遗赠给伴侣-完全合法">（三）遗赠给伴侣，完全合法</h2>
+<p>关键的一步在这里：民法典允许自然人<strong>立遗嘱将个人财产赠与法定继承人以外的组织、个人</strong>[4]。你的伴侣虽然不是法定继承人，但完全可以作为受遗赠人合法拿到你的遗产。</p>
+<h2 id="四-遗产管理人-一个人担两个角色">（四）遗产管理人：一个人担两个角色</h2>
+<p>遗嘱（遗赠）需要有一个遗产管理人。找律师担任有效但花钱；其实可以<strong>把受遗赠人和遗产管理人都定为一个人——你的伴侣</strong>，就能完美达成&quot;我死了，钱给他花、事由他来办&quot;的效果[5]。</p>
+<h2 id="五-两个实操提醒">（五）两个实操提醒</h2>
+<ul><li><strong>60日表态期：</strong>受遗赠人应当在知道受遗赠后60日内作出接受或放弃的表示，到期没有表示的，视为放弃受遗赠[6]。务必生前就跟伴侣讲清楚：收到通知后马上表态。</li><li><strong>房产遗赠要交契税：</strong>房产遗赠给法定继承人以外的人（比如伴侣），办理过户时需要缴纳契税（各地适用税率不同，一般3%左右）；法定继承人继承则免征[17]。这笔钱要有预期。</li></ul>
+<h1 id="四-最终策略-照着办就行">四、最终策略：照着办就行</h1>
+<ol><li><strong>办理意定监护：</strong>第一顺位写你的爱人，后面依次加上你信赖的好朋友。</li><li><strong>办理遗嘱（遗赠）：</strong>遗赠对象和遗产管理人都写你的爱人。</li><li><strong>双方互为办理：</strong>你指定TA，TA也指定你，两份安排都做公证，效果才完整。</li></ol>
+<h1 id="五-北京办理攻略">五、北京办理攻略</h1>
+<h2 id="一-第一步永远是打电话咨询">（一）第一步永远是打电话咨询</h2>
+<p>北京各公证处对意定监护的受理标准并不统一。据2026年4月北京日报的调查，燕京、国立、首佳、华夏等多家公证处不办或暂停办理意定监护；有的要求子女到场确认；也有公证处明确表示可以办理[10]。所以第一步是<strong>先电话咨询、多问几家</strong>，不要因为一家拒绝就放弃。</p>
+<h2 id="二-推荐去处">（二）推荐去处</h2>
+<ul><li><strong>北京市长安公证处：</strong>东城区朝阳门北大街6号首创大厦1层、7层，电话010-65543888。设有专门的遗嘱中心，可在线预约遗嘱公证；2026年的调查中确认可以办理意定监护公证[18][11]。</li><li><strong>北京市方圆公证处：</strong>东城区朝阳门内大街东水井胡同5号北京INN大厦一层、三层，电话010-85197666。曾办理过意定监护公证（案例较少）[19][11]。</li></ul>
+<h2 id="三-便民信息与费用参考">（三）便民信息与费用参考</h2>
+<ul><li><strong>周末可办：</strong>自2026年6月起，方圆、长安、东方、信德、国立、中信、精诚、正阳、海诚、国信等10家公证处周六、周日均对外开放接待[12]。</li><li><strong>意定监护协议公证：</strong>数千元到上万元不等，协议一般没有统一模板，需到公证处现场拟定[10]。</li><li><strong>房产类遗嘱／遗赠公证：</strong>按北京市政府指导价，按受益份额建筑面积每平方米80元；单套房产费用总额不超过1万元[14]。</li><li><strong>遗嘱公证：</strong>北京公证行业对年满70岁的老人免费办理遗嘱公证[13]。</li></ul>
+<h2 id="四-办理流程">（四）办理流程</h2>
+<ol><li>电话咨询并预约（说明要办意定监护或遗嘱公证）。</li><li>你和拟定的监护人（或遗嘱受益人）按约定时间一起到场。</li><li>公证员当面审查、确认双方真实意愿。</li><li>现场拟定或确认协议／遗嘱内容并签字。</li><li>公证处出具公证书，双方各自留存原件。</li></ol>
+<h1 id="六-提前准备这些材料">六、提前准备这些材料</h1>
+<h2 id="一-意定监护公证">（一）意定监护公证</h2>
+<p>以司法部公证事项证明材料清单为基础，各公证处可能略有增减[15]：</p>
+<ul><li>双方身份证、户口簿（集体户口的提供本人页原件及单位盖章的首页复印件）；</li><li>意定监护协议（多数公证处现场拟定，无现成模板）；</li><li>本人（被监护人）民事行为能力的确认证明——实践中往往需要体检或精神状况评估报告，或由公证员当面审查；</li><li>财产状况相关材料（按公证处要求）；</li><li>部分公证处还会要求监护人提供监护能力、无犯罪记录等证明。</li></ul>
+<h2 id="二-遗嘱公证">（二）遗嘱公证</h2>
+<p>按《遗嘱公证细则》要求准备[16]：</p>
+<ul><li>身份证、户口簿；</li><li>遗嘱草稿（也可由公证处代书）；</li><li>遗嘱涉及财产的权属证明：房产证、存折、银行卡、股票／基金账户证明、车辆登记证等；</li><li>婚姻状况证明（部分公证处要求）；</li><li>公证员认为需要的其他材料，如精神状况证明。</li></ul>
+<h1 id="七-q-a-特殊情况快问快答">七、Q&amp;A：特殊情况快问快答</h1>
+<p><strong>Q1 意定监护办完还能反悔吗？</strong></p>
+<p>能。在你失能之前，你和监护人任何一方都可以请求解除协议；失能之后，监护人没有正当理由不能甩手不干[2]。如果监护人严重侵害你的权益，法院可以依申请撤销其资格[9]。</p>
+<p><strong>Q2 监护人会不会拿我的钱给自己花？</strong></p>
+<p>法律上不允许：监护人必须以最有利于你的原则履职，除为维护你的利益外不得处分你的财产[8]。实务上，公证处会建议在协议中增加一名&quot;监督人&quot;监督履职，这是降低风险最实用的办法[10]。</p>
+<p><strong>Q3 公证处不给我办怎么办？</strong></p>
+<p>这不是你一个人的遭遇。2026年北京日报的调查显示，多家公证处不办或暂停办理意定监护，有的要求子女到场确认[10]。建议：多问几家，优先联系长安、方圆这类明确能办的机构；协议里设置监督人，会显著提高受理成功率。</p>
+<p><strong>Q4 自己写遗嘱不行吗，为什么一定要公证？</strong></p>
+<p>自书遗嘱也有效，但容易被质疑（笔迹、日期、涂改、内容歧义），一旦有争议就要进诉讼。公证遗嘱由公证机构审查并出具证明，法律效力最强。还要注意：立了数份遗嘱、内容相抵触的，<strong>以最后一份为准</strong>[7]，所以随时可以更新，以你最新的意愿为准。</p>
+<p><strong>Q5 伴侣收到遗赠后要做什么？</strong></p>
+<p>记住60天：受遗赠人应当在知道受遗赠后60日内作出接受的意思表示，到期没有表示的视为放弃[6]。生前就跟伴侣约定好：你去世后，TA一收到通知就尽快表态接受。</p>
+<p><strong>Q6 遗赠房产要交多少税？</strong></p>
+<p>房产遗赠给法定继承人以外的人（比如伴侣），过户时要缴纳契税，一般3%左右，具体以当地税务和不动产登记要求为准；法定继承人继承则免征[17]。这笔钱是遗赠落地的现实成本，提前有预期。</p>
+<p><strong>Q7 伴侣是外籍或港澳台人士，可以办吗？</strong></p>
+<p>可以，但需提供有效的身份证件和居留证件等材料。北京全市24家公证处已开通涉外公证一站式服务，建议先电话咨询具体材料要求[11]。</p>
+<p><strong>Q8 双方都办，具体怎么安排？</strong></p>
+<p>你：指定TA为第一顺位意定监护人，遗嘱里把TA写成受遗赠人＋遗产管理人。TA：反向同样安排你。两人分别办理各自的意定监护和遗嘱公证，互为备份。</p>
+<h1 id="附-参考来源">附：参考来源</h1>
+<p>本文为信息整理与科普，不构成法律意见；各地公证处要求随时可能调整，办理前请以公证处或律师的当面意见为准。主要来源如下：</p>
+<ol><li><a href="https://xingfa.cjbdi.com/start?id=Jriv1xP+E/hwLPVvv9/KO+pMP1SiSsLrdSvq7d5qqlBM2WTdm1w2HmEjVEquhZOm8RxwAxu07aCfCiXjjgfOkA==&amp;item=HaM5cKauvfjGiZdq1burBg+4/Q6gnYxTqnaXC3rgw8PzfcM1EpBCxHAq6Ewor6AU4r0VkyiT2C9lh1RJCn2m3Q==&amp;origin=I0xGo8roH9g7N33x1Ka7D8TR/t/mTztLsfG+EBPAkEoQSL+wWolUvd+qfnSR9f+Ckv+w4l82Q9y954yg6GvR2w==&amp;path=Cz/giwt8wTnLHFhSaVFLLrpSTfFH+Cs5hIJWwxF8DQS6AaU+IOk5MQ6jxmCePSUulN58DtJGpsI4kZX3K3h9iA==&amp;userId=Hhl6rChMBRLz/b1mh3Jf4poOHj/3P7c/Br+jJ31KONlAgmxSFnq9Uq6AGsCN/dmEcVRub754Vw1ieEqrMODVOg==#imported-data" target="_blank" rel="noreferrer">《中华人民共和国民法典》第三十三条（意定监护）·中国司法大数据研究院，2020-05-28</a></li><li><a href="https://xingfa.cjbdi.com/start?id=o44hiinlS1m5CzwU+gQMvj9sBzIxw/RED6tpi5JVpG8GYfK2W/yfmisOv8n8yqavootRpW3E2jGDK2rOy0nT7g==&amp;item=mwKNZD8LDK0d5xHWjSVGA1bGhAggU1psiVwuUGgp4nLl7Rw+nr7DStsImmeShmjgnTa7g1NF/NXNMZubjwpP0w==&amp;origin=NmCCZobn0HWU5EfSWXKLafIbPyBxB/P24Gs7TpFFU79Q9Xe1yHY59ehlvbKdUEE/KUlrVieLokIhb/lmeT8edA==&amp;path=glOYaZV3z/cOc5xCRgFKxiPZ+EkZQYM90HlRosbnfIM1kl7EC/ST7WDAmMS6bmA1qNL++joY214xcNuo4BHrbQ==&amp;userId=OKPhY7CGs87w+6pAkzkb6ZQ43q04wdxA2tPzLMwfndaw1FwMrOOG2BITvTo+gBxsO9+3cisYWRW7e5ADxWKEnQ==#imported-data" target="_blank" rel="noreferrer">最高人民法院关于适用《中华人民共和国民法典》总则编若干问题的解释（法释〔2022〕6号）第十一条（意定监护协议解除），2022-02-24</a></li><li><a href="https://xingfa.cjbdi.com/start?id=YDoqOnXLOfiaAi0EMGOx42jWRBghQmPfvj6v3+Xm2xah57/mXSIimBoTpgDW6q4rYpzNoenMkFfDS2a1KYxmNQ==&amp;item=mT4314DIn0199rBMWNubn6z7WBNUByrRyxLP1rX4KbDBEe/Yq3bg9CvW8V3L2f+tIYA14JN5MdnVFnigC42gyA==&amp;origin=Mjpjrt+8OaeYq1Lw0S5rKM32ltIoW3bs87l4mpoA5CITIYIx8sVc22wNgOEEqr4LbvmZin6HHdABApVkPjo8AQ==&amp;path=eNLvCNTjoPE+WZTv7B6NZQxpwOe4YZbcylJlO15CBKzNDOp7aqvU2wBl/0p9XIQCpeGTUZJfPBUXJC3qNDZYIA==&amp;userId=oVXLNJc4rTEpi69A9O1HHZfsJT6YdhSmiR8s39G+TCOkAlpxxfCXaPAJwSN0EyCKx7DVX6wJu2+siaVwgYaFFg==#imported-data" target="_blank" rel="noreferrer">《中华人民共和国民法典》第一千一百二十七条（法定继承顺序）·中国司法大数据研究院，2020-05-28</a></li><li><a href="https://xingfa.cjbdi.com/start?id=DStu6v/idRAh4KhFiuWFw4pVFlTnl+r/0g79WjTg4cxOExDy8x4IvzvssYpub+N5dVv2rTgfHlcvuwjc7u9ouQ==&amp;item=NMvHmCo4VLtz0gSOGTF7xCzQP7WlOg8ZlEdnumSadC9kGjBvrgiHyNKVPBLIVbRzSicah4H9I6wf2f8+vgnQTQ==&amp;origin=LZzmKHV+zQ4o0VVB+9rg9sdVX1V6UX3dOzFEk3FMF3KOB61uvoYvVpVaRtfEcRK52nDGGHq6Dckd75bf/BH34Q==&amp;path=oteBnHzqkfxpVsZRjd67FEwKiKVYMgAH0IRCxFXrAg6RZ1ZyqMSh33AHGNJBxqmjyz5WpOa2hBMOjojgkoH5xw==&amp;userId=dKICGOC1sxA4yWEjKt4OesF8m97pymQdM5ZQI2NRt4kRDG9jXtPDRqeD/rXoqfAOuvu0QqJZkzjZGhTulIluWw==#imported-data" target="_blank" rel="noreferrer">《中华人民共和国民法典》第一千一百三十三条（遗嘱处分与遗赠）·中国司法大数据研究院，2020-05-28</a></li><li><a href="https://xingfa.cjbdi.com/start?id=VOthJM8nUOoHFdxNBxXAxD1E/snsZ1c7YgP9lvimPxwKTxt6aPgXQ2b09t7ZKRxj1obu2NDYohPuoaWMb3TRAg==&amp;item=Afa+P5MJ3NpM1VeWTIZI943TYeRC1h1WHw5F6pGbkp8WIMtho65o/mvAO23jQdSx+nylgzL7cbvrd3hx2Uyh0Q==&amp;origin=lDd6LhdxzjxZHuSOZxgbS7FrKebH6JuUHYntWSvnyUyHkCfqGYvnFBXbbc4xmUDpM2UmQXzXYCoS0TpVOiPJ7g==&amp;path=d4CHX6CobUfYWA6EmK4e0p56rsEuYEnXo6VM73GHmvVdnFMehXGALFJoUVyIcwET8j9lXt29A5rbOtgXDuQ4FQ==&amp;userId=jgZzqXVoxshb5/k7TWR0n+h6yez6fwIYjkue3RHYPtjobtTjVho+eCYTnKOD66BUsm2ixeYBG8CnWYqnqkqpQg==#imported-data" target="_blank" rel="noreferrer">《中华人民共和国民法典》第一千一百四十五条（遗产管理人）·中国司法大数据研究院，2020-05-28</a></li><li><a href="https://xingfa.cjbdi.com/start?id=kywCta582ypEaCrBgKGN62H4CPiUiGRIBKw7UNMzkoloMUn3GEJAgg27GLgYYZthtfIUlBMk5r9g4mk9RASKSw==&amp;item=jLWIfr50/0CTeyxoH4zJ9ORctEvDg2v6uUXYGV+elUe8lUJ1wzUdXDkthb5KDU4I/30gB68uE58H8x3195VAuA==&amp;origin=o8sTgckq66KuQ0Rny29IQ+G/UvyROFfVmjsal3r5W+6tBPD+T5Dutx7OSqRF2kqzqepy3/sIGUoR07VluDBSkQ==&amp;path=SV7RBKVbNVIdmRLEzEwdExnvfeSFjvg0gK8+A0/vhxMXaPP5qNHeAOwnLCsLNfOAUfdc5BvMDuG9P4E4aaRAAw==&amp;userId=koZkNGOaSkhIXioQiOyDQ5alduOenR7LyTKtqJ6hnldsH4hiZs+uQfolSJHSNjEa/UZPU4SwScuWd4xs+BtM2A==#imported-data" target="_blank" rel="noreferrer">《中华人民共和国民法典》第一千一百二十四条（受遗赠人60日表态期）·中国司法大数据研究院，2020-05-28</a></li><li><a href="https://xingfa.cjbdi.com/start?id=l+uCdFufp9+FsJpzhqSFXN8gadDflO02bwsr+FXU+inLnN3b87DgI0ytOAx+HZWGQ3EIyFq1UcyUBbLT6WE+QQ==&amp;item=mBT4S7nOyRV76AGQVgSmSZmkMWxIPALUfNdUCjImfFaEORjfdHWklSw47EzaTnwR+4OTa8Z18RpCic/khAc2tA==&amp;origin=nnJtPffIpGR1XmLUjzcNbxVnr5o5qIcLX4016w2xcYHY+IFk8PL0eEtDZe9NHCzw9LfS7dShZkbTsujaskt6fw==&amp;path=CJnWBLNSqioF1gQheeTWOQ6/Q+OR1IIbdyrTG2EjP5wHMdQxP8fTonPHO48whABG8+itb+IY6Yv5sdBlAKs8gQ==&amp;userId=CHkvEUPRRagqgxYH7JkBB/9fmuKqsbgUe9myzhEx9kNTP272adsN2Jp5HmTWC8TF82soOnAxXZqOIyskbBy2lA==#imported-data" target="_blank" rel="noreferrer">《中华人民共和国民法典》第一千一百四十二条（数份遗嘱以最后为准）·中国司法大数据研究院，2020-05-28</a></li><li><a href="https://xingfa.cjbdi.com/start?id=Q6K5zZ02vuck2MiufXu+wF8UmVIT5LlmMqHZ4VYYdJ6b7g1/kocOKYu6e5dT71xaCvEbjrcCq+BBrOXSwqKDsg==&amp;item=NppvnTashWzPn1+Ru8DATdfiJPtZ6btWNGnOnsfBS+UIezlxCtLhAi8O/mly6lg+GvjMLTe6U7mGncjwwHIK1g==&amp;origin=ISe0LTdgfhSCuXCOMhei5tgDDvMqc7o+crrKPWPXPxUX07IYgx1ncs6GIYnV5b+1+ZcpN4/lEIU5k3huy1TIvw==&amp;path=iArVuv2jfNeCRPUiqTZSZMy0Y3s3EiyAXhaNNUYYDBxiQzQRYXkr1dbSaSFJMcBbMDiZbX8WwzfkIaEH1E7WSg==&amp;userId=FXKpXuQ3Hj1OeHgYlYS+wfJxXtxM6an59vf6YDBt3x8hVztCiN7NU0AAK2bmiOlOJZPOShqrpLP1yCwSUS7J6Q==#imported-data" target="_blank" rel="noreferrer">《中华人民共和国民法典》第三十五条（监护人不得处分被监护人财产）·中国司法大数据研究院，2020-05-28</a></li><li><a href="https://xingfa.cjbdi.com/start?id=CAgUWdtcMS3jWLkSenero0CM+mmxyKzygG8syEKUdT61m5eQ4uzpH9zivPp1RqrJnkduisV+nx8jocGAQPZOZA==&amp;item=BtXQ+3etBzACAJHtUI0M1ad9Lh9bnroiYTS4/ibqIRAx4wzs4WuTN02XU6EF4GXGTeGFMopzbjSKFwhc6WuIXQ==&amp;origin=EGO31YnR/voDgzcVq2yjnr26iUgYzLbHyKOCJkxvcF5wScBsR1Zwm1FziztY+taoityBoYk1bv3cWRMfZhYahA==&amp;path=ToovsWzksFZMQI0ZS4oylrCvyVKv4XB02Dd50qKSACPxKNYh5zqQpcddRz6KL++xdQpqFs8sxCB4zg2xxeHGvg==&amp;userId=dQPLjioeH9NhvWiaWkkD3w8ckYEX3EqrO14KBW6AiH89OrSILyPy+k6YqB+R6PhvKtifQlzpG/vqJc+cfTWuFg==#imported-data" target="_blank" rel="noreferrer">《中华人民共和国民法典》第三十六条（撤销监护人资格）·中国司法大数据研究院，2020-05-28</a></li><li><a href="https://news.bjd.com.cn/2026/04/17/11693945.shtml" target="_blank" rel="noreferrer">北京日报客户端：《老人想用&quot;意定监护&quot;选个外人做监护人，为何办理困难重重？》，2026-04-17</a></li><li><a href="https://www.chinabjnotary.org.cn/content/details_31_1478240.html" target="_blank" rel="noreferrer">北京市公证协会：《2026年最新北京市公证机构及办证点地址电话大全》，2026-09-30</a></li><li><a href="https://sfj.beijing.gov.cn/sfj/sfdt/ywdt82/flfw93/744032800/index.html" target="_blank" rel="noreferrer">北京市司法局：《北京市公证机构&quot;周末我服务&quot;名册》，2026-06</a></li><li><a href="https://www.chinabjnotary.org.cn/content/details_31_1450826.html" target="_blank" rel="noreferrer">北京市公证协会：《北京公证遗嘱服务：让&quot;身后事&quot;不再成烦心事》，2024-08-14</a></li><li><a href="https://www.beijing.gov.cn/fwcj/jiage/ggfw1/6982f3d8cb5f765399bf1602.html" target="_blank" rel="noreferrer">北京市人民政府：《证明房产继承、赠与和遗赠公证服务项目的最高收费标准》，2026-03</a></li><li><a href="https://www.moj.gov.cn/pub/sfbgw/zwfw/zwfwbszn/bszngzfw/202604/t20260417_533996.html" target="_blank" rel="noreferrer">中华人民共和国司法部：《公证事项证明材料清单》，2026-04-17</a></li><li><a href="https://www.gov.cn/gongbao/content/2001/content_61295.htm" target="_blank" rel="noreferrer">司法部令第57号：《遗嘱公证细则》，中国政府网，2001-03</a></li><li><a href="https://12366.chinatax.gov.cn/nszx/onlinemessage/detail?id=9c81be77b91c494399e7470f4adbe3e4" target="_blank" rel="noreferrer">国家税务总局12366纳税服务平台：《房产遗承和遗赠要缴纳的税费改革各是多少？》</a></li><li><a href="https://www.changannotary.cn/article/43" target="_blank" rel="noreferrer">北京市长安公证处：《遗嘱公证申请与预约说明》</a></li><li><a href="https://application.bnpo.gov.cn/fygzc/web/lxwm/lxwm/index.html" target="_blank" rel="noreferrer">北京市方圆公证处：《联系我们·办公地址》</a></li></ol>
+        <div class="footer">本页由飞书文档静态转换生成，适合直接发布到 GitHub Pages。</div>
+      </article>
+    </div>
+  </div>
+
+  <script>
+    function resizeFrames() {
+      document.querySelectorAll('.html5-frame').forEach((frame) => {
+        try {
+          const doc = frame.contentWindow.document;
+          const height = Math.max(
+            doc.body ? doc.body.scrollHeight : 0,
+            doc.documentElement ? doc.documentElement.scrollHeight : 0
+          );
+          if (height) {
+            frame.style.height = (height + 8) + 'px';
+          }
+        } catch (error) {
+          console.warn('iframe resize skipped', error);
+        }
+      });
+    }
+
+    window.addEventListener('load', () => {
+      resizeFrames();
+      setTimeout(resizeFrames, 250);
+    });
+  </script>
+</body>
+</html>
