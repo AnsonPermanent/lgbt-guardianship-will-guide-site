@@ -162,10 +162,10 @@
 
     .table-wrap {
       margin: 22px 0;
-      border: 1px solid var(--line);
-      border-radius: 18px;
       max-width: 100%;
       overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     table {
@@ -191,36 +191,34 @@
 
     .inline-embed {
       margin: 28px 0;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
-      box-shadow: 0 12px 24px rgba(31, 35, 41, 0.06);
+      padding: 10px 0 4px;
+      border-top: 1px solid rgba(36, 87, 245, 0.14);
+      border-bottom: 1px solid rgba(36, 87, 245, 0.14);
     }
 
-    .inline-embed .wrap { width: 100%; max-width: 100%; padding: 4px 2px; }
+    .inline-embed .wrap { width: 100%; max-width: 100%; padding: 0; }
     .inline-embed .title { font-size: 18px; font-weight: 700; color: #1F2329; margin: 6px 0 14px; line-height: 1.45; }
     .inline-embed .timeline { display: flex; align-items: stretch; gap: 8px; margin: 0 0 18px; }
     .inline-embed .tl-step { flex: 1; text-align: center; position: relative; min-width: 0; }
-    .inline-embed .tl-node { display: inline-block; max-width: 100%; background: #EFF5FA; border: 1px solid #C9DDEB; color: #1F2329; border-radius: 20px; padding: 6px 12px; font-size: 13px; font-weight: 600; white-space: normal; }
-    .inline-embed .tl-node.now { background: #FFFFFF; border: 1px solid #DEE3E8; color: #646A73; font-weight: 400; }
-    .inline-embed .tl-node.live { background: #3D7EAA; border-color: #3D7EAA; color: #FFFFFF; }
-    .inline-embed .tl-node.after { background: #FFFFFF; border: 1px solid #DEE3E8; color: #646A73; font-weight: 400; }
+    .inline-embed .tl-node { display: inline-block; max-width: 100%; background: transparent; border: none; color: #1F2329; border-radius: 0; padding: 0; font-size: 13px; font-weight: 600; white-space: normal; }
+    .inline-embed .tl-node.now { color: #646A73; font-weight: 400; }
+    .inline-embed .tl-node.live { color: #2457f5; }
+    .inline-embed .tl-node.after { color: #646A73; font-weight: 400; }
     .inline-embed .tl-arrow { position: absolute; top: 50%; right: -8px; transform: translateY(-50%); color: #C0CCD6; font-size: 14px; }
     .inline-embed .tl-step:last-child .tl-arrow { display: none; }
     .inline-embed .cols { display: flex; gap: 12px; align-items: stretch; }
-    .inline-embed .card { flex: 1; border: 1px solid #DEE3E8; border-radius: 10px; padding: 14px 14px 12px; background: #FFFFFF; }
-    .inline-embed .card-live { border-top: 3px solid #3D7EAA; }
-    .inline-embed .card-after { border-top: 3px solid #8FA8BC; }
+    .inline-embed .card { flex: 1; border: none; border-left: 2px solid #d8dfeb; border-radius: 0; padding: 0 0 0 14px; background: transparent; }
+    .inline-embed .card-live { border-left-color: #3D7EAA; }
+    .inline-embed .card-after { border-left-color: #8FA8BC; }
     .inline-embed .card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
     .inline-embed .card-name { font-size: 16px; font-weight: 700; color: #1F2329; }
-    .inline-embed .card-tag { font-size: 12px; color: #646A73; background: #F2F3F5; border-radius: 10px; padding: 2px 8px; white-space: normal; }
+    .inline-embed .card-tag { font-size: 12px; color: #646A73; background: transparent; border-radius: 0; padding: 0; white-space: normal; }
     .inline-embed .rows { display: table; width: 100%; border-collapse: collapse; }
     .inline-embed .row { display: table-row; }
     .inline-embed .row-label { display: table-cell; width: 88px; font-size: 12px; color: #646A73; padding: 5px 8px 5px 0; vertical-align: top; }
     .inline-embed .row-val { display: table-cell; font-size: 13px; color: #1F2329; padding: 5px 0; vertical-align: top; }
     .inline-embed .row-val b { font-weight: 600; }
-    .inline-embed .strategy { margin-top: 16px; border: 1px solid #EAD9A8; background: #FBF6E9; border-radius: 10px; padding: 12px 14px; }
+    .inline-embed .strategy { margin-top: 18px; padding-top: 12px; border-top: 1px dashed #d9dee8; }
     .inline-embed .strategy-title { font-size: 14px; font-weight: 700; color: #8A6116; margin-bottom: 6px; }
     .inline-embed .strategy ol { margin: 0; padding-left: 20px; }
     .inline-embed .strategy li { font-size: 13px; color: #1F2329; margin: 4px 0; }
@@ -249,18 +247,20 @@
       .article ol { font-size: 16px; }
       .article h2 { font-size: 24px; }
       .article h3 { font-size: 20px; }
-      .table-wrap { margin-left: -2px; margin-right: -2px; padding: 8px 12px; }
+      .table-wrap { margin-left: -2px; margin-right: -2px; padding: 8px 0; border-radius: 0; }
       table, thead, tbody, tr, th, td { display: block; width: 100%; }
       thead { display: none; }
-      tbody { display: grid; gap: 12px; }
-      tr { border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; background: #fff; }
+      tbody { display: grid; gap: 0; }
+      tr { border-bottom: 1px solid var(--line); padding: 10px 0; background: transparent; }
+      tr:last-child { border-bottom: none; }
       td { border-bottom: none; padding: 6px 0; font-size: 14px; text-align: left; }
       td::before { content: attr(data-label); display: block; margin-bottom: 4px; font-size: 12px; font-weight: 700; color: var(--muted); }
-      .inline-embed { padding: 14px; }
+      .inline-embed { padding: 10px 0 4px; }
       .inline-embed .timeline { flex-direction: column; }
       .inline-embed .tl-arrow { display: none; }
       .inline-embed .cols { flex-direction: column; }
       .inline-embed .card-head { flex-direction: column; align-items: flex-start; }
+      .inline-embed .card { padding-left: 12px; }
       .inline-embed .row,
       .inline-embed .row-label,
       .inline-embed .row-val { display: block; width: auto; }
