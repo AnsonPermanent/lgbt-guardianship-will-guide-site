@@ -161,18 +161,17 @@
     .article li + li { margin-top: 0.45em; }
 
     .table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
       margin: 22px 0;
       border: 1px solid var(--line);
       border-radius: 18px;
       max-width: 100%;
+      overflow: hidden;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 720px;
+      min-width: 0;
       background: white;
     }
 
@@ -190,23 +189,41 @@
       font-weight: 700;
     }
 
-    .html5-card {
+    .inline-embed {
       margin: 28px 0;
+      padding: 18px;
       border: 1px solid var(--line);
       border-radius: 20px;
-      overflow: hidden;
-      background: white;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
       box-shadow: 0 12px 24px rgba(31, 35, 41, 0.06);
     }
 
-    .html5-frame {
-      width: 100%;
-      max-width: 100%;
-      min-height: 440px;
-      border: 0;
-      display: block;
-      background: white;
-    }
+    .inline-embed .wrap { width: 100%; max-width: 100%; padding: 4px 2px; }
+    .inline-embed .title { font-size: 18px; font-weight: 700; color: #1F2329; margin: 6px 0 14px; line-height: 1.45; }
+    .inline-embed .timeline { display: flex; align-items: stretch; gap: 8px; margin: 0 0 18px; }
+    .inline-embed .tl-step { flex: 1; text-align: center; position: relative; min-width: 0; }
+    .inline-embed .tl-node { display: inline-block; max-width: 100%; background: #EFF5FA; border: 1px solid #C9DDEB; color: #1F2329; border-radius: 20px; padding: 6px 12px; font-size: 13px; font-weight: 600; white-space: normal; }
+    .inline-embed .tl-node.now { background: #FFFFFF; border: 1px solid #DEE3E8; color: #646A73; font-weight: 400; }
+    .inline-embed .tl-node.live { background: #3D7EAA; border-color: #3D7EAA; color: #FFFFFF; }
+    .inline-embed .tl-node.after { background: #FFFFFF; border: 1px solid #DEE3E8; color: #646A73; font-weight: 400; }
+    .inline-embed .tl-arrow { position: absolute; top: 50%; right: -8px; transform: translateY(-50%); color: #C0CCD6; font-size: 14px; }
+    .inline-embed .tl-step:last-child .tl-arrow { display: none; }
+    .inline-embed .cols { display: flex; gap: 12px; align-items: stretch; }
+    .inline-embed .card { flex: 1; border: 1px solid #DEE3E8; border-radius: 10px; padding: 14px 14px 12px; background: #FFFFFF; }
+    .inline-embed .card-live { border-top: 3px solid #3D7EAA; }
+    .inline-embed .card-after { border-top: 3px solid #8FA8BC; }
+    .inline-embed .card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+    .inline-embed .card-name { font-size: 16px; font-weight: 700; color: #1F2329; }
+    .inline-embed .card-tag { font-size: 12px; color: #646A73; background: #F2F3F5; border-radius: 10px; padding: 2px 8px; white-space: normal; }
+    .inline-embed .rows { display: table; width: 100%; border-collapse: collapse; }
+    .inline-embed .row { display: table-row; }
+    .inline-embed .row-label { display: table-cell; width: 88px; font-size: 12px; color: #646A73; padding: 5px 8px 5px 0; vertical-align: top; }
+    .inline-embed .row-val { display: table-cell; font-size: 13px; color: #1F2329; padding: 5px 0; vertical-align: top; }
+    .inline-embed .row-val b { font-weight: 600; }
+    .inline-embed .strategy { margin-top: 16px; border: 1px solid #EAD9A8; background: #FBF6E9; border-radius: 10px; padding: 12px 14px; }
+    .inline-embed .strategy-title { font-size: 14px; font-weight: 700; color: #8A6116; margin-bottom: 6px; }
+    .inline-embed .strategy ol { margin: 0; padding-left: 20px; }
+    .inline-embed .strategy li { font-size: 13px; color: #1F2329; margin: 4px 0; }
 
     .footer {
       margin-top: 32px;
@@ -232,10 +249,23 @@
       .article ol { font-size: 16px; }
       .article h2 { font-size: 24px; }
       .article h3 { font-size: 20px; }
-      .table-wrap { margin-left: -2px; margin-right: -2px; }
-      table { min-width: 560px; }
-      th, td { padding: 12px 10px; font-size: 14px; }
-      .html5-frame { min-height: 520px; }
+      .table-wrap { margin-left: -2px; margin-right: -2px; padding: 8px 12px; }
+      table, thead, tbody, tr, th, td { display: block; width: 100%; }
+      thead { display: none; }
+      tbody { display: grid; gap: 12px; }
+      tr { border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; background: #fff; }
+      td { border-bottom: none; padding: 6px 0; font-size: 14px; text-align: left; }
+      td::before { content: attr(data-label); display: block; margin-bottom: 4px; font-size: 12px; font-weight: 700; color: var(--muted); }
+      .inline-embed { padding: 14px; }
+      .inline-embed .timeline { flex-direction: column; }
+      .inline-embed .tl-arrow { display: none; }
+      .inline-embed .cols { flex-direction: column; }
+      .inline-embed .card-head { flex-direction: column; align-items: flex-start; }
+      .inline-embed .row,
+      .inline-embed .row-label,
+      .inline-embed .row-val { display: block; width: auto; }
+      .inline-embed .row-label { padding: 8px 0 2px; }
+      .inline-embed .row-val { padding: 0 0 6px; }
     }
   </style>
 </head>
@@ -259,108 +289,46 @@
 <p>这不是贩卖焦虑，这两件事都可以由我们自己提前安排——靠两个法律工具：<strong>意定监护</strong>和<strong>遗嘱（遗赠）</strong>。意定监护管&quot;活着的事&quot;，遗嘱管&quot;身后的事&quot;，<strong>两个都要办</strong>。下面把分工、策略、北京办理地点、材料和常见问题一次讲清楚。</p>
 <h1 id="一-先搞懂-两个工具各管哪一段">一、先搞懂：两个工具各管哪一段</h1>
 <p>一句话概括：<strong>意定监护＝你活着但失能时，有人替你签字做主；遗嘱＝你去世后，钱按你的意愿分配。</strong>两者覆盖的时间段不同、功能不同，谁也不能替代谁。</p>
-<div class="html5-card"><iframe class="html5-frame" loading="lazy" srcdoc="&lt;!doctype html&gt;
-&lt;html lang=&quot;zh-CN&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-&lt;meta name=&quot;use-iframe&quot; content=&quot;true&quot;&gt;
-&lt;meta name=&quot;html-box-height-mode&quot; content=&quot;auto&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;意定监护与遗嘱遗赠的双轨分工图解与最终办理策略&quot;&gt;
-&lt;title&gt;意定监护与遗嘱双轨图解&lt;/title&gt;
-&lt;style&gt;
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, sans-serif; background: #FFFFFF; color: #1F2329; line-height: 1.6; }
-  .wrap { width: 100%; max-width: 100%; padding: 4px 2px; }
-  .title { font-size: 18px; font-weight: 700; color: #1F2329; margin: 6px 0 14px; }
-  .timeline { display: flex; align-items: stretch; margin: 0 0 18px; }
-  .tl-step { flex: 1; text-align: center; position: relative; }
-  .tl-node { display: inline-block; background: #EFF5FA; border: 1px solid #C9DDEB; color: #1F2329; border-radius: 20px; padding: 6px 12px; font-size: 13px; font-weight: 600; white-space: nowrap; }
-  .tl-node.now { background: #FFFFFF; border: 1px solid #DEE3E8; color: #646A73; font-weight: 400; }
-  .tl-node.live { background: #3D7EAA; border-color: #3D7EAA; color: #FFFFFF; }
-  .tl-node.after { background: #FFFFFF; border: 1px solid #DEE3E8; color: #646A73; font-weight: 400; }
-  .tl-arrow { position: absolute; top: 50%; right: -8px; transform: translateY(-50%); color: #C0CCD6; font-size: 14px; }
-  .tl-step:last-child .tl-arrow { display: none; }
-  .cols { display: flex; gap: 12px; align-items: stretch; }
-  .card { flex: 1; border: 1px solid #DEE3E8; border-radius: 10px; padding: 14px 14px 12px; background: #FFFFFF; }
-  .card-live { border-top: 3px solid #3D7EAA; }
-  .card-after { border-top: 3px solid #8FA8BC; }
-  .card-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
-  .card-name { font-size: 16px; font-weight: 700; color: #1F2329; }
-  .card-tag { font-size: 12px; color: #646A73; background: #F2F3F5; border-radius: 10px; padding: 2px 8px; white-space: nowrap; }
-  .rows { display: table; width: 100%; border-collapse: collapse; }
-  .row { display: table-row; }
-  .row-label { display: table-cell; width: 88px; font-size: 12px; color: #646A73; padding: 5px 8px 5px 0; vertical-align: top; }
-  .row-val { display: table-cell; font-size: 13px; color: #1F2329; padding: 5px 0; vertical-align: top; }
-  .row-val b { font-weight: 600; }
-  .warn { display: table-cell; font-size: 12px; color: #B4542A; padding: 5px 0; }
-  .strategy { margin-top: 16px; border: 1px solid #EAD9A8; background: #FBF6E9; border-radius: 10px; padding: 12px 14px; }
-  .strategy-title { font-size: 14px; font-weight: 700; color: #8A6116; margin-bottom: 6px; }
-  .strategy ol { margin: 0; padding-left: 20px; }
-  .strategy li { font-size: 13px; color: #1F2329; margin: 4px 0; }
-  @media (max-width: 600px) {
-    .cols { flex-direction: column; }
-    .tl-node { font-size: 12px; padding: 5px 8px; }
-    .card-name { font-size: 15px; }
-  }
-
-@media (max-width: 600px) {
-  body { overflow-x: hidden; }
-  .timeline { flex-wrap: wrap; gap: 8px; }
-  .tl-step { min-width: 0; }
-  .tl-node { white-space: normal; max-width: 100%; }
-  .tl-arrow { display: none; }
-  .card-head { flex-direction: column; align-items: flex-start; gap: 6px; }
-  .card-tag { white-space: normal; }
-  .row-label { width: 72px; }
-}
-
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div class=&quot;wrap&quot;&gt;
-  &lt;div class=&quot;title&quot;&gt;两份法律文件，各管一段人生：意定监护管生前，遗嘱（遗赠）管身后&lt;/div&gt;
-  &lt;div class=&quot;timeline&quot;&gt;
-    &lt;div class=&quot;tl-step&quot;&gt;&lt;span class=&quot;tl-node now&quot;&gt;现在：趁头脑清楚时办理&lt;/span&gt;&lt;span class=&quot;tl-arrow&quot;&gt;→&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;tl-step&quot;&gt;&lt;span class=&quot;tl-node live&quot;&gt;失能时：意定监护生效&lt;/span&gt;&lt;span class=&quot;tl-arrow&quot;&gt;→&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;tl-step&quot;&gt;&lt;span class=&quot;tl-node after&quot;&gt;去世后：遗嘱（遗赠）生效&lt;/span&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;cols&quot;&gt;
-    &lt;div class=&quot;card card-live&quot;&gt;
-      &lt;div class=&quot;card-head&quot;&gt;&lt;span class=&quot;card-name&quot;&gt;意定监护&lt;/span&gt;&lt;span class=&quot;card-tag&quot;&gt;管活着的事&lt;/span&gt;&lt;/div&gt;
-      &lt;div class=&quot;rows&quot;&gt;
-        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;生效时点&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;&lt;b&gt;丧失或部分丧失民事行为能力时&lt;/b&gt;，如昏迷、失智、无法签字&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;能做什么&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;医疗决定与手术签字；生活照护安排；代为处理日常事务&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;重要边界&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;&lt;b&gt;只能为本人利益行事&lt;/b&gt;，不得把本人财产转给自己（民法典第35条）&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;何时终止&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;本人去世即自动失效，&lt;b&gt;不能当遗嘱用&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;最大优势&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;可设多人、按顺序生效；同一时间仅一人履职，去世自动顺延下一位&lt;/span&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;card card-after&quot;&gt;
-      &lt;div class=&quot;card-head&quot;&gt;&lt;span class=&quot;card-name&quot;&gt;遗嘱（遗赠）&lt;/span&gt;&lt;span class=&quot;card-tag&quot;&gt;管身后的事&lt;/span&gt;&lt;/div&gt;
-      &lt;div class=&quot;rows&quot;&gt;
-        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;生效时点&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;&lt;b&gt;去世后&lt;/b&gt;，从遗产分配开始&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;能做什么&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;决定财产归谁；指定遗产管理人；可遗赠给法定继承人以外的任何人，包括伴侣&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;关键动作&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;&lt;b&gt;受遗赠人知道后60日内表态接受&lt;/b&gt;，逾期视为放弃（民法典第1124条）&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;何时终止&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;遗产分割处理完毕&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;row&quot;&gt;&lt;span class=&quot;row-label&quot;&gt;最大优势&lt;/span&gt;&lt;span class=&quot;row-val&quot;&gt;公证后法律效力极强；生前可随时撤回、变更，以最后一份为准&lt;/span&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;strategy&quot;&gt;
-    &lt;div class=&quot;strategy-title&quot;&gt;最终策略：三句话照做&lt;/div&gt;
-    &lt;ol&gt;
-      &lt;li&gt;办理意定监护：第一顺位写你的伴侣，后面依次排上你信赖的好朋友。&lt;/li&gt;
-      &lt;li&gt;办理遗嘱（遗赠）：受遗赠人和遗产管理人都写你的伴侣。&lt;/li&gt;
-      &lt;li&gt;双方互为对方办理，两份安排都做公证，效果才完整。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-" title="文档内嵌图解"></iframe></div>
+<section class="inline-embed"><div class="wrap">
+  <div class="title">两份法律文件，各管一段人生：意定监护管生前，遗嘱（遗赠）管身后</div>
+  <div class="timeline">
+    <div class="tl-step"><span class="tl-node now">现在：趁头脑清楚时办理</span><span class="tl-arrow">→</span></div>
+    <div class="tl-step"><span class="tl-node live">失能时：意定监护生效</span><span class="tl-arrow">→</span></div>
+    <div class="tl-step"><span class="tl-node after">去世后：遗嘱（遗赠）生效</span></div>
+  </div>
+  <div class="cols">
+    <div class="card card-live">
+      <div class="card-head"><span class="card-name">意定监护</span><span class="card-tag">管活着的事</span></div>
+      <div class="rows">
+        <div class="row"><span class="row-label">生效时点</span><span class="row-val"><b>丧失或部分丧失民事行为能力时</b>，如昏迷、失智、无法签字</span></div>
+        <div class="row"><span class="row-label">能做什么</span><span class="row-val">医疗决定与手术签字；生活照护安排；代为处理日常事务</span></div>
+        <div class="row"><span class="row-label">重要边界</span><span class="row-val"><b>只能为本人利益行事</b>，不得把本人财产转给自己（民法典第35条）</span></div>
+        <div class="row"><span class="row-label">何时终止</span><span class="row-val">本人去世即自动失效，<b>不能当遗嘱用</b></span></div>
+        <div class="row"><span class="row-label">最大优势</span><span class="row-val">可设多人、按顺序生效；同一时间仅一人履职，去世自动顺延下一位</span></div>
+      </div>
+    </div>
+    <div class="card card-after">
+      <div class="card-head"><span class="card-name">遗嘱（遗赠）</span><span class="card-tag">管身后的事</span></div>
+      <div class="rows">
+        <div class="row"><span class="row-label">生效时点</span><span class="row-val"><b>去世后</b>，从遗产分配开始</span></div>
+        <div class="row"><span class="row-label">能做什么</span><span class="row-val">决定财产归谁；指定遗产管理人；可遗赠给法定继承人以外的任何人，包括伴侣</span></div>
+        <div class="row"><span class="row-label">关键动作</span><span class="row-val"><b>受遗赠人知道后60日内表态接受</b>，逾期视为放弃（民法典第1124条）</span></div>
+        <div class="row"><span class="row-label">何时终止</span><span class="row-val">遗产分割处理完毕</span></div>
+        <div class="row"><span class="row-label">最大优势</span><span class="row-val">公证后法律效力极强；生前可随时撤回、变更，以最后一份为准</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="strategy">
+    <div class="strategy-title">最终策略：三句话照做</div>
+    <ol>
+      <li>办理意定监护：第一顺位写你的伴侣，后面依次排上你信赖的好朋友。</li>
+      <li>办理遗嘱（遗赠）：受遗赠人和遗产管理人都写你的伴侣。</li>
+      <li>双方互为对方办理，两份安排都做公证，效果才完整。</li>
+    </ol>
+  </div>
+</div></section>
 <p>再把关键差异放进一张表里对照着看[1][3][4][5][6]：</p>
-<div class="table-wrap"><table><thead><tr><th>维度</th><th>意定监护</th><th>遗嘱（遗赠）</th></tr></thead><tbody><tr><td>-</td><td>-</td><td>-</td></tr><tr><td><strong>管什么</strong></td><td>你活着但失能时的照护与决策</td><td>你去世后的财产归属</td></tr><tr><td><strong>何时生效</strong></td><td>丧失或部分丧失民事行为能力时</td><td>去世后</td></tr><tr><td><strong>能选谁</strong></td><td>近亲属或任何愿意担任的个人、组织</td><td>法定继承人，或法定继承人以外的任何人</td></tr><tr><td><strong>受益者</strong></td><td>你自己（监护人替你作主）</td><td>你指定的人，例如伴侣</td></tr><tr><td><strong>何时终止</strong></td><td>本人去世即失效</td><td>遗产分割处理完毕</td></tr><tr><td><strong>核心风险</strong></td><td>监护人滥用职权，需要监督人制衡</td><td>亲属争议；受遗赠人错过60日表态期</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>维度</th><th>意定监护</th><th>遗嘱（遗赠）</th></tr></thead><tbody><tr><td data-label="维度"><strong>管什么</strong></td><td data-label="意定监护">你活着但失能时的照护与决策</td><td data-label="遗嘱（遗赠）">你去世后的财产归属</td></tr><tr><td data-label="维度"><strong>何时生效</strong></td><td data-label="意定监护">丧失或部分丧失民事行为能力时</td><td data-label="遗嘱（遗赠）">去世后</td></tr><tr><td data-label="维度"><strong>能选谁</strong></td><td data-label="意定监护">近亲属或任何愿意担任的个人、组织</td><td data-label="遗嘱（遗赠）">法定继承人，或法定继承人以外的任何人</td></tr><tr><td data-label="维度"><strong>受益者</strong></td><td data-label="意定监护">你自己（监护人替你作主）</td><td data-label="遗嘱（遗赠）">你指定的人，例如伴侣</td></tr><tr><td data-label="维度"><strong>何时终止</strong></td><td data-label="意定监护">本人去世即失效</td><td data-label="遗嘱（遗赠）">遗产分割处理完毕</td></tr><tr><td data-label="维度"><strong>核心风险</strong></td><td data-label="意定监护">监护人滥用职权，需要监督人制衡</td><td data-label="遗嘱（遗赠）">亲属争议；受遗赠人错过60日表态期</td></tr></tbody></table></div>
 <h1 id="二-意定监护-管-活着的事">二、意定监护：管&quot;活着的事&quot;</h1>
 <h2 id="一-什么时候生效-能做什么">（一）什么时候生效、能做什么</h2>
 <p>意定监护的作用，是在<strong>本人活着但失能</strong>的时候生效，最典型的就是各种手术签字、医疗决定，也包括日常生活照护的安排。理论上，它也能替代本人作出其他决策（包括财产），但有严格限制[1]。</p>
@@ -425,28 +393,5 @@
     </div>
   </div>
 
-  <script>
-    function resizeFrames() {
-      document.querySelectorAll('.html5-frame').forEach((frame) => {
-        try {
-          const doc = frame.contentWindow.document;
-          const height = Math.max(
-            doc.body ? doc.body.scrollHeight : 0,
-            doc.documentElement ? doc.documentElement.scrollHeight : 0
-          );
-          if (height) {
-            frame.style.height = (height + 8) + 'px';
-          }
-        } catch (error) {
-          console.warn('iframe resize skipped', error);
-        }
-      });
-    }
-
-    window.addEventListener('load', () => {
-      resizeFrames();
-      setTimeout(resizeFrames, 250);
-    });
-  </script>
 </body>
 </html>
